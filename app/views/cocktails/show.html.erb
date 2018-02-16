@@ -1,22 +1,56 @@
-<div class="container">
-  <div class="row">
 
-    <div class="col-xs-6 col-xs-offset-3">
-      <h3>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :scale %>) ;">
 
-        <%=  @cocktail.name %>
-      </h3>
 
-      <ul class="list-group">
-        <% @cocktail.doses.each do |dose| %>
-        <li class="list-group-item justify-content-between">
-          <%=  dose.ingredient.name %>
-          <span class="badge badge-default badge-pill"><%= dose.description %></span>
-          <%=  link_to 'Delete', dose_path, method: :delete %>
-        </li>
+  <div class="banner-content">
+    <h1>
+      <%=  @cocktail.name %>
+    </h1>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+  <div class="container">
+    <div class="grid">
+      <div class="grid-description">
+
+      </div>
+
+      <div class="grid-ingredients">
+        <h4>
+          Ingredients list
+        </h4>
+
+        <ul class="list-group">
+          <% @cocktail.doses.each do |dose| %>
+          <li class="list-group-item justify-content-between">
+            <%=  dose.ingredient.name %>
+            <span class="badge badge-default badge-pill"><%= dose.description %>
+            </span>
+            <span class="text-black">
+              <%=  link_to dose_path(dose), method: :delete do %>
+              <i class="fa fa-trash"></i>
+              <% end %>
+            </span>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="grid-addingredient">
+
+        <h4>Add a new ingredient</h4>
+
+
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :description %>
+        <%= f.association :ingredient %>
+        <%= f.submit "add dose", class: "btn btn-primary" %>
         <% end %>
-      </ul>
+      </div>
     </div>
-    <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail.id)  %>
+
   </div>
 </div>
