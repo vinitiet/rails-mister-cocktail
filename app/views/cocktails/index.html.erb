@@ -17,27 +17,27 @@
       <div class="col-xs-12 col-sm-4">
         <% unless cocktail.photo.blank? %>
 
-          <% p cocktail.photo %>
+        <% p cocktail.photo %>
         <div class="card" data-aos="fade-right" " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=
         cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>);">
         <% else %>
         <div class="card" style="background-color: grey">
-        <% end %>
-        <div class="card-description">
-          <%= link_to cocktail_path(cocktail) do %>
-          <h2>      <%= cocktail.name  %> </h2>
           <% end %>
-        </div>
-        ,     <div class="card-links">
+          <div class="card-description">
+            <%= link_to cocktail_path(cocktail) do %>
+            <h2>      <%= cocktail.name  %> </h2>
+            <% end %>
+          </div>
+          <div class="card-links">
 
-          <p><%= link_to "Delete", cocktail_path(cocktail), class: "text-danger", method: :delete %></p>
+            <p><%= link_to "Delete", cocktail_path(cocktail), class: "text-danger", method: :delete %></p>
+          </div>
         </div>
+
       </div>
-
+      <% end %>
     </div>
-    <% end %>
   </div>
-</div>
 </div>
 
 
