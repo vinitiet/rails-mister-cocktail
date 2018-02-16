@@ -1,17 +1,27 @@
-<% @cocktails.each do |cocktail| %>
+<div class="wrapper">
 
-  <%= link_to cocktail_path(cocktail) do %>
-    <h2>
-      <%= cocktail.name  %>
-    </h2>
-  <% end %>
 
-  <% cocktail.ingredients.each do |ingredient| %>
-    <h3>
-      <%= ingredient.name %>
-    </h3>
-  <% end %>
+  <div class="container text-center">
 
-  <%= link_to "Add new ingredient", doses_new_path(cocktail) %>
+    <h1>Your cocktail list</h1>
 
-<% end %>
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" data-aos="fade-right" " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=  cocktail.imageurl %>);">
+          <div class="card-description">
+          <%= link_to cocktail_path(cocktail) do %>
+            <h2>      <%= cocktail.name  %> </h2>
+          <% end %>
+            <p>placeholder</p>
+          </div>
+        </div>
+
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+

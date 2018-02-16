@@ -2,7 +2,11 @@
   "name": "rails-mister-cocktail",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^3.2.2"
+    "@rails/webpacker": "^3.2.2",
+    "aos": "^2.2.0",
+    "bootstrap": "3",
+    "jquery": "^3.3.1",
+    "typed.js": "^2.0.6"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.11.1"

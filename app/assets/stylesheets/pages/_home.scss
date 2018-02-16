@@ -1,0 +1,21 @@
+// Specific CSS for your home-page
+
+body {
+  margin-top: 70px;
+  background-color: #142B47;
+  // background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), asset-url('background.jpg') ;
+  min-height: 80vh;
+
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: white;
+  font-weight: bold;
+}
