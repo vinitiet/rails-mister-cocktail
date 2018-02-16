@@ -1,5 +1,5 @@
-import AOS from 'aos';
+// import AOS from 'aos';
 
-AOS.init({
-  duration: 1200,
-})
+// AOS.init({
+//   duration: 1200,
+// })

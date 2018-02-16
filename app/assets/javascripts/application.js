@@ -14,8 +14,8 @@
 //= require turbolinks
 //= require_tree .
 
-import 'bootstrap'
-import 'components/card.js';
-import { initUpdateNavbarOnScroll } from '../components/navbar';
+// import 'bootstrap'
+// import 'components/card.js';
+// import { initUpdateNavbarOnScroll } from '../components/navbar';
 
 // initUpdateNavbarOnScroll();
