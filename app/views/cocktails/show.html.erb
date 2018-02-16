@@ -15,9 +15,13 @@
   <div class="container">
     <div class="grid">
       <div class="grid-description">
-
+        <h4>How to do it</h4>
+        <p> <%= @cocktail.description %> </p>
       </div>
 
+      <div class="grid-pic">
+        <%=  cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+      </div>
       <div class="grid-ingredients">
         <h4>
           Ingredients list
