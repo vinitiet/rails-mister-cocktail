@@ -8,10 +8,7 @@
 <div class="wrapper">
 
   <div class="container text-center">
-
-
     <h1>Your cocktail list</h1>
-
     <div class="row">
       <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-sm-4">
@@ -29,8 +26,13 @@
             <% end %>
           </div>
           <div class="card-links">
+                <span class="text-black">
+                  <%=  link_to cocktail_path(cocktail), method: :delete do %>
+                  <i class="fa fa-trash"></i>
+                  <% end %>
+                </span>
 
-            <p><%= link_to "Delete", cocktail_path(cocktail), class: "text-danger", method: :delete %></p>
+
           </div>
         </div>
 

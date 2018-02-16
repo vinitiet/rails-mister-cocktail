@@ -1,10 +1,11 @@
 
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :scale %>) ;">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= cl_image_path @cocktail.photo, height: 10, width: 400, crop: :scale %>) ;">
 
 
   <div class="banner-content">
     <h1>
       <%=  @cocktail.name %>
+
     </h1>
   </div>
 </div>
@@ -14,33 +15,57 @@
 
   <div class="container">
     <div class="grid">
+
       <div class="grid-description">
         <h4>How to do it</h4>
         <p> <%= @cocktail.description %> </p>
+        <%=  cl_image_tag @cocktail.photo, height: 200, width: 200, crop: :fill %>
       </div>
 
       <div class="grid-pic">
-        <%=  cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
       </div>
+
+
+
       <div class="grid-ingredients">
         <h4>
           Ingredients list
         </h4>
 
+
+
+        <!-- Ingredients -->
         <ul class="list-group">
           <% @cocktail.doses.each do |dose| %>
           <li class="list-group-item justify-content-between">
-            <%=  dose.ingredient.name %>
-            <span class="badge badge-default badge-pill"><%= dose.description %>
-            </span>
-            <span class="text-black">
-              <%=  link_to dose_path(dose), method: :delete do %>
-              <i class="fa fa-trash"></i>
-              <% end %>
-            </span>
+            <div class = "ing-group">
+
+              <div class="ing-name">
+                <%=  dose.ingredient.name %>
+              </div>
+
+              <div class="ing-description">
+                <%= dose.description %>
+              </div>
+
+              <div class="ing-icons">
+                <span class="text-black">
+                  <%=  link_to dose_path(dose), method: :delete do %>
+                  <i class="fa fa-trash"></i>
+                  <% end %>
+                </span>
+
+              </div>
+
+            </div>
+
           </li>
           <% end %>
         </ul>
+
+
+
+
       </div>
 
       <div class="grid-addingredient">

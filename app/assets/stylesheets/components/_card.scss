@@ -6,6 +6,7 @@
   background-position: center;
   color: white;
   position: relative;
+  border-radius: 5px;
 }
 .card-user {
   position: absolute;
@@ -36,7 +37,6 @@ h2 {
 }
 .card-links {
   height: 30px;
-  background-color: white;
   font-weight: lighter;
   position: absolute;
   right: 10px;
